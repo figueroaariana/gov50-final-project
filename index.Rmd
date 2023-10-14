@@ -8,7 +8,7 @@ output:
 ---
 
 
-## Project thoughts
+## Project thoughts and Ideas
 
 I am interested in exploring data related to education policy or higher education rates among Latinos. I am also interested in the amount of Latinos that vote in elections.
 
