@@ -15,6 +15,7 @@ I am interested in exploring data related to education policy or higher educatio
 ```{r}
 library(tidyverse)
 library(readxl)
+library(dplyr)
 FoodAccessResearchAtlasData2019 <- read_excel("~/GOV 50/PSETS/gov50-final-project/FoodAccessResearchAtlasData2019.xlsx", sheet = 3)
 FoodAccessResearchAtlasData2019
 ```
@@ -24,6 +25,51 @@ FoodAccessResearchAtlasData2019
 Are low-income communities in California more susceptible to food deserts? In this study, I plan to examine and compare how low-income communities are affected by food deserts and their proximity to food markets and ability to access fresh food. I plan to do a comparative analysis between middle class and lower-income communities to assess the differences in proximity to supermarkets. I hypothesize that communities that are wealthier likely have higher access to fresh foods, therefore less susceptible to food deserts. I base this hypothesis on the fact that inner city/urban communities lack the spaces for supermarkets and there has been data exploring the reason why supermarkets are so hard to access in urban areas where there are more people of color and low-income people living in these spaces. My unit of analysis interest will be income (in California Counties), race, and proximity to supermarkets. The explanatory variable of interest is whether there are disparities in proximity to supermarkets between races and income. For example, if the variable income were to be coded, high income would be coded with == 1 and low income would be == 0. I would do this using the "if_else" function in the data set. This variable is measured from the Gov Data website data set of Food Access in counties across the US. The outcome variable of interest (dependent variable) is the amount of supermarkets in the area which in theory depend on the location/income demographic of the place where they are built and how likely people are able to access fresh food.If I observe that those counties that are considered to be more high-income have more supermarkets with closer proximity than low-income communities, my hypothesis will be supported. If the data happens to show no disparities between both incomes and the proximity and amount of supermarkets by mile, then my hypothesis will disproved. 
 
 
+## Milestone 3
+
+```{r}
+califonia_counties <- FoodAccessResearchAtlasData2019 |>  
+  filter(State == "California") |>
+    select(- c(lakidshalf:laomultirhalfshare,
+            lakids20:laomultir20share,
+            lakids1:lapop10share,
+            lahunv20:lasnap20share,
+            TractKids:TractSNAP)) 
+
+califonia_counties
+
+```
+
+
+```{r}
+california_counties <- FoodAccessResearchAtlasData2019|>
+  filter(State == "California")
+
+california_counties$MedianFamilyIncome <- as.numeric(as.character(california_counties$MedianFamilyIncome))
+california_counties$LALOWI05_10 <- as.numeric(as.character(california_counties$LALOWI05_10)) 
+
+california_counties <- california_counties |>
+  group_by(County) |>
+  summarize(county_pop = sum(Pop2010, na.rm = TRUE),
+            county_avg_income = mean(MedianFamilyIncome, na.rm = TRUE),
+            county_avg_prox = mean(LALOWI05_10, na.rm = TRUE))
+california_counties  
+```
+Out of 1,499,556 people living in Alameda county, the average income is 112,924, a particularly middle class county. However on average, only 429 low income people with low access in the country live within 1/2 a mile in urban spaces and 10 miles in rural areas away from a market.  
+
+
+```{r}
+library(ggplot2)
+ggplot(data = california_counties,
+       mapping = aes(x = county_avg_income,
+                     y = county_avg_prox)) +
+  geom_point() +
+  labs(
+    x = "Average Income Across Counties",
+    y = "Average Approximation to Grocery Markets")
+
+```
+The Y variable is the low income population count beyond 1/2 mile for urban areas or 10 miles for rural areas from supermarket. This means that approximately 1500 people who make about $50,000 a year, are not of close proximity to supermarkets. Of those who are in the higher income bracket, a smaller amount of individuals are as far to supermarkets. and the way that this works too 
 
 
 
