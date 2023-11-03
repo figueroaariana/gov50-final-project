@@ -69,7 +69,7 @@ ggplot(data = california_counties,
     y = "Average Approximation to Grocery Markets")
 
 ```
-The Y variable is the low income population count beyond 1/2 mile for urban areas or 10 miles for rural areas from supermarket. This means that approximately 1500 people who make about $50,000 a year, are not of close proximity to supermarkets. Of those who are in the higher income bracket, a smaller amount of individuals are as far to supermarkets. and the way that this works too 
+The Y variable is the low income population count beyond 1/2 mile for urban areas or 10 miles for rural areas from supermarket. This means that approximately 1500 people who make about $50,000 a year, are not of close proximity to supermarkets. Of those who are in the higher income bracket, a smaller amount of individuals are as far to supermarkets. 
 
 
 
