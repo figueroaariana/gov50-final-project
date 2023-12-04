@@ -115,7 +115,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["FoodAccessResearchAtlasData2019.xlsx","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-4-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.24/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","test_files/anchor-4.2.2/anchor.min.js","test_files/bowser-1.9.3/bowser.min.js","test_files/distill-2.2.21/template.v2.js","test_files/figure-html5/unnamed-chunk-4-1.png","test_files/figure-html5/unnamed-chunk-8-1.png","test_files/figure-html5/unnamed-chunk-9-1.png","test_files/header-attrs-2.24/header-attrs.js","test_files/jquery-3.6.0/jquery-3.6.0.js","test_files/jquery-3.6.0/jquery-3.6.0.min.js","test_files/jquery-3.6.0/jquery-3.6.0.min.map","test_files/popper-2.6.0/popper.min.js","test_files/tippy-6.2.7/tippy-bundle.umd.min.js","test_files/tippy-6.2.7/tippy-light-border.css","test_files/tippy-6.2.7/tippy.css","test_files/tippy-6.2.7/tippy.umd.min.js","test_files/webcomponents-2.0.0/webcomponents.js","test.html"]}
+  {"type":"character","attributes":{},"value":["FoodAccessResearchAtlasData2019.xlsx","index_files/anchor-4.2.2/anchor.min.js","index_files/bowser-1.9.3/bowser.min.js","index_files/distill-2.2.21/template.v2.js","index_files/figure-html5/unnamed-chunk-4-1.png","index_files/figure-html5/unnamed-chunk-6-1.png","index_files/header-attrs-2.17/header-attrs.js","index_files/header-attrs-2.24/header-attrs.js","index_files/jquery-3.6.0/jquery-3.6.0.js","index_files/jquery-3.6.0/jquery-3.6.0.min.js","index_files/jquery-3.6.0/jquery-3.6.0.min.map","index_files/popper-2.6.0/popper.min.js","index_files/tippy-6.2.7/tippy-bundle.umd.min.js","index_files/tippy-6.2.7/tippy-light-border.css","index_files/tippy-6.2.7/tippy.css","index_files/tippy-6.2.7/tippy.umd.min.js","index_files/webcomponents-2.0.0/webcomponents.js","test_files/anchor-4.2.2/anchor.min.js","test_files/bowser-1.9.3/bowser.min.js","test_files/distill-2.2.21/template.v2.js","test_files/figure-html5/unnamed-chunk-4-1.png","test_files/figure-html5/unnamed-chunk-8-1.png","test_files/figure-html5/unnamed-chunk-9-1.png","test_files/header-attrs-2.24/header-attrs.js","test_files/jquery-3.6.0/jquery-3.6.0.js","test_files/jquery-3.6.0/jquery-3.6.0.min.js","test_files/jquery-3.6.0/jquery-3.6.0.min.map","test_files/popper-2.6.0/popper.min.js","test_files/tippy-6.2.7/tippy-bundle.umd.min.js","test_files/tippy-6.2.7/tippy-light-border.css","test_files/tippy-6.2.7/tippy.css","test_files/tippy-6.2.7/tippy.umd.min.js","test_files/webcomponents-2.0.0/webcomponents.js","test.html"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1518,57 +1518,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 
 <div class="d-article">
 <h2 id="project-thoughts-and-ideas">Project thoughts and Ideas</h2>
-<p>I am interested in exploring data related to education policy or higher education rates among Latinos. I am also interested in the amount of Latinos that vote in elections.</p>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
-<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://readxl.tidyverse.org'>readxl</a></span><span class='op'>)</span></span>
-<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://dplyr.tidyverse.org'>dplyr</a></span><span class='op'>)</span></span>
-<span><span class='va'>food_access</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://readxl.tidyverse.org/reference/read_excel.html'>read_excel</a></span><span class='op'>(</span><span class='st'>"~/GOV 50/PSETS/gov50-final-project/FoodAccessResearchAtlasData2019.xlsx"</span>, </span>
-<span>                          sheet <span class='op'>=</span> <span class='fl'>3</span>, </span>
-<span>                          na <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>""</span>, <span class='st'>"NA"</span>, <span class='st'>"NULL"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span> </span>
-<span><span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>urban <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>Urban</span> <span class='op'>==</span> <span class='fl'>1</span>, <span class='st'>"Urban"</span>, <span class='st'>"Rural"</span><span class='op'>)</span><span class='op'>)</span></span>
-<span><span class='va'>food_access</span></span></code></pre>
-</div>
-<pre><code># A tibble: 72,531 × 148
-   CensusTract State   County  Urban Pop2010 OHU2010 GroupQuartersFlag
-   &lt;chr&gt;       &lt;chr&gt;   &lt;chr&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;             &lt;dbl&gt;
- 1 01001020100 Alabama Autaug…     1    1912     693                 0
- 2 01001020200 Alabama Autaug…     1    2170     743                 0
- 3 01001020300 Alabama Autaug…     1    3373    1256                 0
- 4 01001020400 Alabama Autaug…     1    4386    1722                 0
- 5 01001020500 Alabama Autaug…     1   10766    4082                 0
- 6 01001020600 Alabama Autaug…     1    3668    1311                 0
- 7 01001020700 Alabama Autaug…     1    2891    1188                 0
- 8 01001020801 Alabama Autaug…     0    3081    1074                 0
- 9 01001020802 Alabama Autaug…     0   10435    3694                 0
-10 01001020900 Alabama Autaug…     0    5675    2067                 0
-# ℹ 72,521 more rows
-# ℹ 141 more variables: NUMGQTRS &lt;dbl&gt;, PCTGQTRS &lt;dbl&gt;,
-#   LILATracts_1And10 &lt;dbl&gt;, LILATracts_halfAnd10 &lt;dbl&gt;,
-#   LILATracts_1And20 &lt;dbl&gt;, LILATracts_Vehicle &lt;dbl&gt;,
-#   HUNVFlag &lt;dbl&gt;, LowIncomeTracts &lt;dbl&gt;, PovertyRate &lt;dbl&gt;,
-#   MedianFamilyIncome &lt;dbl&gt;, LA1and10 &lt;dbl&gt;, LAhalfand10 &lt;dbl&gt;,
-#   LA1and20 &lt;dbl&gt;, LATracts_half &lt;dbl&gt;, LATracts1 &lt;dbl&gt;, …</code></pre>
-</div>
+<p>I am interested in exploring data related to food deserts in urban areas and with a predominantly low-income population. I think that the data I find will most likely reflect that low-income communities have more fast food places compared to fresh food markets.</p>
 <h2 id="milestone-2">Milestone 2</h2>
 <p>Are low-income communities in California more susceptible to food deserts? In this study, I plan to examine and compare how low-income communities are affected by food deserts and their proximity to food markets and ability to access fresh food. I plan to do a comparative analysis between middle class and lower-income communities to assess the differences in proximity to supermarkets. I hypothesize that communities that are wealthier likely have higher access to fresh foods, therefore less susceptible to food deserts. I base this hypothesis on the fact that inner city/urban communities lack the spaces for supermarkets and there has been data exploring the reason why supermarkets are so hard to access in urban areas where there are more people of color and low-income people living in these spaces. My unit of analysis interest will be income (in California Counties), race, and proximity to supermarkets. The explanatory variable of interest is whether there are disparities in proximity to supermarkets between races and income. For example, if the variable income were to be coded, high income would be coded with == 1 and low income would be == 0. I would do this using the “if_else” function in the data set. This variable is measured from the Gov Data website data set of Food Access in counties across the US. The outcome variable of interest (dependent variable) is the amount of supermarkets in the area which in theory depend on the location/income demographic of the place where they are built and how likely people are able to access fresh food.If I observe that those counties that are considered to be more high-income have more supermarkets with closer proximity than low-income communities, my hypothesis will be supported. If the data happens to show no disparities between both incomes and the proximity and amount of supermarkets by mile, then my hypothesis will disproved.</p>
 <h2 id="milestone-3">Milestone 3</h2>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>califonia_counties</span> <span class='op'>&lt;-</span> <span class='va'>food_access</span> <span class='op'>|&gt;</span>  </span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>State</span> <span class='op'>==</span> <span class='st'>"California"</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
-<span>    <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>-</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>lakidshalf</span><span class='op'>:</span><span class='va'>laomultirhalfshare</span>,</span>
-<span>            <span class='va'>lakids20</span><span class='op'>:</span><span class='va'>laomultir20share</span>,</span>
-<span>            <span class='va'>lakids1</span><span class='op'>:</span><span class='va'>lapop10share</span>,</span>
-<span>            <span class='va'>lahunv20</span><span class='op'>:</span><span class='va'>lasnap20share</span>,</span>
-<span>            <span class='va'>TractKids</span><span class='op'>:</span><span class='va'>TractSNAP</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>urban <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>Urban</span> <span class='op'>==</span> <span class='fl'>1</span>, <span class='st'>"Urban"</span>, <span class='st'>"Rural"</span><span class='op'>)</span><span class='op'>)</span></span>
-<span>  </span>
-<span><span class='va'>food_access</span><span class='op'>$</span><span class='va'>lahisphalf</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span><span class='op'>(</span><span class='va'>food_access</span><span class='op'>$</span><span class='va'>lahisphalf</span><span class='op'>)</span><span class='op'>)</span></span>
-<span></span>
-<span><span class='va'>califonia_counties</span></span></code></pre>
-</div>
 <pre><code># A tibble: 8,024 × 77
    CensusTract State    County Urban Pop2010 OHU2010 GroupQuartersFlag
    &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;  &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;             &lt;dbl&gt;
@@ -1591,25 +1545,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 #   LA1and20 &lt;dbl&gt;, LATracts_half &lt;dbl&gt;, LATracts1 &lt;dbl&gt;, …</code></pre>
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>california_counties</span> <span class='op'>&lt;-</span> <span class='va'>food_access</span><span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>State</span> <span class='op'>==</span> <span class='st'>"California"</span><span class='op'>)</span></span>
-<span></span>
-<span><span class='va'>california_counties</span><span class='op'>$</span><span class='va'>MedianFamilyIncome</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span><span class='op'>(</span><span class='va'>california_counties</span><span class='op'>$</span><span class='va'>MedianFamilyIncome</span><span class='op'>)</span><span class='op'>)</span></span>
-<span><span class='va'>california_counties</span><span class='op'>$</span><span class='va'>LALOWI05_10</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/numeric.html'>as.numeric</a></span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/character.html'>as.character</a></span><span class='op'>(</span><span class='va'>california_counties</span><span class='op'>$</span><span class='va'>LALOWI05_10</span><span class='op'>)</span><span class='op'>)</span> </span>
-<span></span>
-<span></span>
-<span><span class='va'>california_counties</span> <span class='op'>&lt;-</span> <span class='va'>california_counties</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>County</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/summarise.html'>summarize</a></span><span class='op'>(</span>county_pop <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>Pop2010</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,</span>
-<span>            county_avg_income <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>MedianFamilyIncome</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,</span>
-<span>            avg_pop_fd <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/mean.html'>mean</a></span><span class='op'>(</span><span class='va'>LALOWI05_10</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,</span>
-<span>            hisp_pop <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>lahisphalf</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,</span>
-<span>            urban <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/sum.html'>sum</a></span><span class='op'>(</span><span class='va'>Urban</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span>,</span>
-<span>            med_poverty_rate <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/median.html'>median</a></span><span class='op'>(</span><span class='va'>PovertyRate</span>, na.rm <span class='op'>=</span> <span class='cn'>TRUE</span><span class='op'>)</span><span class='op'>)</span> </span>
-<span></span>
-<span><span class='va'>california_counties</span></span></code></pre>
-</div>
 <pre><code># A tibble: 58 × 7
    County       county_pop county_avg_income avg_pop_fd hisp_pop urban
    &lt;chr&gt;             &lt;dbl&gt;             &lt;dbl&gt;      &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;
@@ -1628,29 +1563,11 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <p>Out of 1,499,556 people living in Alameda county, the average income is 112,924, a particularly middle class county. However on average, only 429 low income people with low access in the country live within 1/2 a mile in urban spaces and 10 miles in rural areas away from a market.</p>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://ggplot2.tidyverse.org'>ggplot2</a></span><span class='op'>)</span></span>
-<span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>california_counties</span>,</span>
-<span>       mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>county_avg_income</span>,</span>
-<span>                     y <span class='op'>=</span> <span class='va'>avg_pop_fd</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span></span>
-<span>  </span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span> </span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span></span>
-<span>    title <span class='op'>=</span> <span class='st'>"People Living in Food Deserts"</span>,</span>
-<span>    x <span class='op'>=</span> <span class='st'>"Average Income Across Counties"</span>,</span>
-<span>    y <span class='op'>=</span> <span class='st'>"Population of People"</span><span class='op'>)</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_smooth.html'>geom_smooth</a></span><span class='op'>(</span><span class='op'>)</span></span></code></pre>
-</div>
 <p><img src="index_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
 </div>
 <p>The graph shows the relationship between income and food deserts. The Y variable is the low income population count beyond 1/2 mile for urban areas or 10 miles for rural areas from supermarket. This means that approximately an average 1500 people who make about $50,000 a year, are not of close proximity to supermarkets. Of those who are in the higher income bracket, a smaller amount of individuals are far from supermarkets. The line of best fit shows a slightly negative relationship concerning exposure to food deserts and higher income. As people are wealthier, they are less likely to experience living in food deserts.</p>
 <h2 id="milestone-4">Milestone 4</h2>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>counties_urbanization</span><span class='op'>&lt;-</span> <span class='va'>california_counties</span><span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>urbanization <span class='op'>=</span> <span class='fu'><a href='https://dplyr.tidyverse.org/reference/if_else.html'>if_else</a></span><span class='op'>(</span><span class='va'>urban</span> <span class='op'>&gt;</span> <span class='fl'>25</span>, <span class='st'>"Urban"</span>, <span class='st'>"Rural"</span> <span class='op'>)</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='op'>-</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='va'>urban</span><span class='op'>)</span><span class='op'>)</span></span>
-<span><span class='va'>counties_urbanization</span></span></code></pre>
-</div>
 <pre><code># A tibble: 58 × 7
    County             county_pop county_avg_income avg_pop_fd hisp_pop
    &lt;chr&gt;                   &lt;dbl&gt;             &lt;dbl&gt;      &lt;dbl&gt;    &lt;dbl&gt;
@@ -1666,14 +1583,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 10 Fresno County          930450            61192.     1137.  262376. 
 # ℹ 48 more rows
 # ℹ 2 more variables: med_poverty_rate &lt;dbl&gt;, urbanization &lt;chr&gt;</code></pre>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='va'>try_1</span><span class='op'>&lt;-</span> <span class='va'>counties_urbanization</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>urbanization</span><span class='op'>)</span> <span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://tidyr.tidyverse.org/reference/pivot_wider.html'>pivot_wider</a></span><span class='op'>(</span></span>
-<span>    names_from <span class='op'>=</span> <span class='va'>urbanization</span>,</span>
-<span>    values_from <span class='op'>=</span> <span class='va'>avg_pop_fd</span><span class='op'>)</span></span>
-<span><span class='va'>try_1</span></span></code></pre>
-</div>
 <pre><code># A tibble: 58 × 7
    County county_pop county_avg_income hisp_pop med_poverty_rate Urban
    &lt;chr&gt;       &lt;dbl&gt;             &lt;dbl&gt;    &lt;dbl&gt;            &lt;dbl&gt; &lt;dbl&gt;
@@ -1690,18 +1599,21 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 # ℹ 48 more rows
 # ℹ 1 more variable: Rural &lt;dbl&gt;</code></pre>
 </div>
-<h2 id="linear-regression">Linear Regression</h2>
+<h2 id="food-deserts-in-urban-vs.-rural-counties">Food Deserts in Urban vs. Rural Counties</h2>
 <div class="layout-chunk" data-layout="l-body">
 <div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://broom.tidymodels.org/'>broom</a></span><span class='op'>)</span></span>
-<span><span class='kw'><a href='https://rdrr.io/r/base/library.html'>library</a></span><span class='op'>(</span><span class='va'><a href='https://tidyverse.tidyverse.org'>tidyverse</a></span><span class='op'>)</span></span>
-<span></span>
-<span><span class='va'>pov_prox</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/stats/lm.html'>lm</a></span><span class='op'>(</span><span class='va'>avg_pop_fd</span> <span class='op'>~</span> <span class='va'>med_poverty_rate</span>, data <span class='op'>=</span> <span class='va'>counties_urbanization</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
-<span>  <span class='fu'>broom</span><span class='fu'>::</span><span class='fu'><a href='https://generics.r-lib.org/reference/tidy.html'>tidy</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>|&gt;</span></span>
-<span>  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/select.html'>select</a></span><span class='op'>(</span><span class='va'>term</span>, est <span class='op'>=</span> <span class='va'>estimate</span>, se<span class='op'>=</span><span class='va'>std.error</span>, pval<span class='op'>=</span><span class='va'>p.value</span><span class='op'>)</span></span>
-<span></span>
-<span><span class='fu'>knitr</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/knitr/man/kable.html'>kable</a></span><span class='op'>(</span><span class='va'>pov_prox</span>, digits<span class='op'>=</span><span class='fl'>3</span>, col.names<span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"Variable"</span>, <span class='st'>"Coefficient Estimate"</span>, <span class='st'>"Standard Error"</span>, <span class='st'>"P-Value"</span><span class='op'>)</span><span class='op'>)</span></span></code></pre>
+<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>counties_urbanization</span>,</span>
+<span>       mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>avg_pop_fd</span>, fill <span class='op'>=</span> <span class='va'>urbanization</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_histogram.html'>geom_histogram</a></span><span class='op'>(</span>position <span class='op'>=</span> <span class='st'>"identity"</span>, alpha <span class='op'>=</span> <span class='fl'>0.6</span>, bins <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span> <span class='op'>+</span> </span>
+<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span></span>
+<span>    title <span class='op'>=</span> <span class='st'>"Food Deserts in Urban vs. Rural Counties"</span>,</span>
+<span>    x <span class='op'>=</span> <span class='st'>"Average Population of People Living in Food Deserts"</span>,</span>
+<span>    y <span class='op'>=</span> <span class='st'>"County Count"</span></span>
+<span>  <span class='op'>)</span></span></code></pre>
 </div>
+<p><img src="index_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
+</div>
+<h2 id="linear-regression">Linear Regression</h2>
+<div class="layout-chunk" data-layout="l-body">
 <table>
 <thead>
 <tr class="header">
@@ -1726,15 +1638,12 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </tr>
 </tbody>
 </table>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://rdrr.io/r/stats/coef.html'>coef</a></span><span class='op'>(</span><span class='va'>pov_prox</span><span class='op'>)</span></span></code></pre>
-</div>
 <pre><code>NULL</code></pre>
 </div>
 <p>The regression analysis suggests that there is a relationship between Median Poverty Rate across California counties and the average number of people living in food deserts. For each unit increase in the median poverty rate, the average population living in food deserts, in this case presented as the variable “intercept”, increases by 40 people, assuming all other factors remain constant. The Median Poverty Rate per County is significant as it has a P-Value of 0, so the null hypothesis is rejected, meaning that living in poverty does have an impact on whether or not you are more or less likely to live in food deserts.</p>
 <p>Answer to Hypothesis:</p>
 <p>The linear regression I ran in this milestone allows me to keep exploring the relationship between income and food deserts across counties in California. As expected, both my graph and the linear regression shows poverty rates to be a factor indicating whether or not a population is more susceptible to experiencing food deserts. The data I have so far is interesting as it strengthens my hypothesis, that low income people have less access to supermarkets and fresh foods. However, I am still in the process of finding out how urbanization and ethnicity further impacts the population of people experiencing food deserts.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

@@ -10,9 +10,9 @@ output:
 
 ## Project thoughts and Ideas
 
-I am interested in exploring data related to education policy or higher education rates among Latinos. I am also interested in the amount of Latinos that vote in elections.
+I am interested in exploring data related to food deserts in urban areas and with a predominantly low-income population. I think that the data I find will most likely reflect that low-income communities have more fast food places compared to fresh food markets.
 
-```{r}
+```{r, include= FALSE}
 library(tidyverse)
 library(readxl)
 library(dplyr)
@@ -21,6 +21,7 @@ food_access <- read_excel("~/GOV 50/PSETS/gov50-final-project/FoodAccessResearch
                           na = c("", "NA", "NULL")) |> 
 mutate(urban = if_else(Urban == 1, "Urban", "Rural"))
 food_access
+
 ```
 
 ## Milestone 2
@@ -30,7 +31,7 @@ Are low-income communities in California more susceptible to food deserts? In th
 
 ## Milestone 3
 
-```{r}
+```{r, echo = FALSE}
 califonia_counties <- food_access |>  
   filter(State == "California") |>
     select(- c(lakidshalf:laomultirhalfshare,
@@ -47,7 +48,7 @@ califonia_counties
 ```
 
 
-```{r}
+```{r, echo = FALSE}
 california_counties <- food_access|>
   filter(State == "California")
 
@@ -65,11 +66,12 @@ california_counties <- california_counties |>
             med_poverty_rate = median(PovertyRate, na.rm = TRUE)) 
 
 california_counties
+
 ```
 Out of 1,499,556 people living in Alameda county, the average income is 112,924, a particularly middle class county. However on average, only 429 low income people with low access in the country live within 1/2 a mile in urban spaces and 10 miles in rural areas away from a market.  
 
 
-```{r}
+```{r, echo = FALSE}
 library(ggplot2)
 ggplot(data = california_counties,
        mapping = aes(x = county_avg_income,
@@ -87,7 +89,7 @@ The graph shows the relationship between income and food deserts. The Y variable
 
 ## Milestone 4
 
-```{r}
+```{r, echo = FALSE}
 counties_urbanization<- california_counties|>
   mutate(urbanization = if_else(urban > 25, "Urban", "Rural" )) |>
   select(-c(urban))
@@ -99,13 +101,30 @@ try_1<- counties_urbanization |>
     names_from = urbanization,
     values_from = avg_pop_fd)
 try_1
+
 ```
+
+
+## Food Deserts in Urban vs. Rural Counties
+
+
+
+```{r}
+ggplot(data = counties_urbanization,
+       mapping = aes(x = avg_pop_fd, fill = urbanization)) + geom_histogram(position = "identity", alpha = 0.6, bins = 10) + 
+  labs(
+    title = "Food Deserts in Urban vs. Rural Counties",
+    x = "Average Population of People Living in Food Deserts",
+    y = "County Count"
+  )
+```
+
 
 
 
 ## Linear Regression
 
-```{r}
+```{r, echo = FALSE}
 library(broom)
 library(tidyverse)
 
@@ -116,6 +135,7 @@ pov_prox <- lm(avg_pop_fd ~ med_poverty_rate, data = counties_urbanization)|>
 knitr::kable(pov_prox, digits=3, col.names= c("Variable", "Coefficient Estimate", "Standard Error", "P-Value"))
 
 coef(pov_prox)
+echo = FALSE
 ```
 The regression analysis suggests that there is a relationship between Median Poverty Rate across California counties and the average number of people living in food deserts. For each unit increase in the median poverty rate, the average population living in food deserts, in this case presented as the variable "intercept", increases by 40 people, assuming all other factors remain constant. The Median Poverty Rate per County is significant as it has a P-Value of 0, so the null hypothesis is rejected, meaning that living in poverty does have an impact on whether or not you are more or less likely to live in food deserts.
 
