@@ -1519,47 +1519,17 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <div class="d-article">
 <h2 id="project-thoughts-and-ideas">Project thoughts and Ideas</h2>
 <p>I am interested in exploring data related to food deserts in urban areas and with a predominantly low-income population. I think that the data I find will most likely reflect that low-income communities have more fast food places compared to fresh food markets.</p>
+<div class="layout-chunk" data-layout="l-body">
+
+</div>
 <h2 id="milestone-2">Milestone 2</h2>
 <p>Are low-income communities in California more susceptible to food deserts? In this study, I plan to examine and compare how low-income communities are affected by food deserts and their proximity to food markets and ability to access fresh food. I plan to do a comparative analysis between middle class and lower-income communities to assess the differences in proximity to supermarkets. I hypothesize that communities that are wealthier likely have higher access to fresh foods, therefore less susceptible to food deserts. I base this hypothesis on the fact that inner city/urban communities lack the spaces for supermarkets and there has been data exploring the reason why supermarkets are so hard to access in urban areas where there are more people of color and low-income people living in these spaces. My unit of analysis interest will be income (in California Counties), race, and proximity to supermarkets. The explanatory variable of interest is whether there are disparities in proximity to supermarkets between races and income. For example, if the variable income were to be coded, high income would be coded with == 1 and low income would be == 0. I would do this using the “if_else” function in the data set. This variable is measured from the Gov Data website data set of Food Access in counties across the US. The outcome variable of interest (dependent variable) is the amount of supermarkets in the area which in theory depend on the location/income demographic of the place where they are built and how likely people are able to access fresh food.If I observe that those counties that are considered to be more high-income have more supermarkets with closer proximity than low-income communities, my hypothesis will be supported. If the data happens to show no disparities between both incomes and the proximity and amount of supermarkets by mile, then my hypothesis will disproved.</p>
 <h2 id="milestone-3">Milestone 3</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 8,024 × 77
-   CensusTract State    County Urban Pop2010 OHU2010 GroupQuartersFlag
-   &lt;chr&gt;       &lt;chr&gt;    &lt;chr&gt;  &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;             &lt;dbl&gt;
- 1 06001400100 Califor… Alame…     1    2937    1314                 0
- 2 06001400200 Califor… Alame…     1    1974     856                 0
- 3 06001400300 Califor… Alame…     1    4865    2418                 0
- 4 06001400400 Califor… Alame…     1    3703    1779                 0
- 5 06001400500 Califor… Alame…     1    3517    1578                 0
- 6 06001400600 Califor… Alame…     1    1571     690                 0
- 7 06001400700 Califor… Alame…     1    4206    1755                 0
- 8 06001400800 Califor… Alame…     1    3594    1567                 0
- 9 06001400900 Califor… Alame…     1    2302    1019                 0
-10 06001401000 Califor… Alame…     1    5678    2354                 0
-# ℹ 8,014 more rows
-# ℹ 70 more variables: NUMGQTRS &lt;dbl&gt;, PCTGQTRS &lt;dbl&gt;,
-#   LILATracts_1And10 &lt;dbl&gt;, LILATracts_halfAnd10 &lt;dbl&gt;,
-#   LILATracts_1And20 &lt;dbl&gt;, LILATracts_Vehicle &lt;dbl&gt;,
-#   HUNVFlag &lt;dbl&gt;, LowIncomeTracts &lt;dbl&gt;, PovertyRate &lt;dbl&gt;,
-#   MedianFamilyIncome &lt;dbl&gt;, LA1and10 &lt;dbl&gt;, LAhalfand10 &lt;dbl&gt;,
-#   LA1and20 &lt;dbl&gt;, LATracts_half &lt;dbl&gt;, LATracts1 &lt;dbl&gt;, …</code></pre>
+
 </div>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 58 × 7
-   County       county_pop county_avg_income avg_pop_fd hisp_pop urban
-   &lt;chr&gt;             &lt;dbl&gt;             &lt;dbl&gt;      &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;
- 1 Alameda Cou…    1510271           112924.      434.  124872.    354
- 2 Alpine Coun…       1175            82813       197.      84.0     0
- 3 Amador Coun…      38091            74668.       36.4   4083.      0
- 4 Butte County     220000            65078.      962.   21547.     38
- 5 Calaveras C…      45578            74943.      656.    3905.      2
- 6 Colusa Coun…      21419            63739.      808.    7676.      2
- 7 Contra Cost…    1049025           116054.      590.  133140.    202
- 8 Del Norte C…      28610            51540.     1061.    4565.      4
- 9 El Dorado C…     181058            97864.      590.   17453.     20
-10 Fresno Coun…     930450            61192.     1137.  262376.    170
-# ℹ 48 more rows
-# ℹ 1 more variable: med_poverty_rate &lt;dbl&gt;</code></pre>
+
 </div>
 <p>Out of 1,499,556 people living in Alameda county, the average income is 112,924, a particularly middle class county. However on average, only 429 low income people with low access in the country live within 1/2 a mile in urban spaces and 10 miles in rural areas away from a market.</p>
 <div class="layout-chunk" data-layout="l-body">
@@ -1568,21 +1538,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>The graph shows the relationship between income and food deserts. The Y variable is the low income population count beyond 1/2 mile for urban areas or 10 miles for rural areas from supermarket. This means that approximately an average 1500 people who make about $50,000 a year, are not of close proximity to supermarkets. Of those who are in the higher income bracket, a smaller amount of individuals are far from supermarkets. The line of best fit shows a slightly negative relationship concerning exposure to food deserts and higher income. As people are wealthier, they are less likely to experience living in food deserts.</p>
 <h2 id="milestone-4">Milestone 4</h2>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 58 × 7
-   County             county_pop county_avg_income avg_pop_fd hisp_pop
-   &lt;chr&gt;                   &lt;dbl&gt;             &lt;dbl&gt;      &lt;dbl&gt;    &lt;dbl&gt;
- 1 Alameda County        1510271           112924.      434.  124872. 
- 2 Alpine County            1175            82813       197.      84.0
- 3 Amador County           38091            74668.       36.4   4083. 
- 4 Butte County           220000            65078.      962.   21547. 
- 5 Calaveras County        45578            74943.      656.    3905. 
- 6 Colusa County           21419            63739.      808.    7676. 
- 7 Contra Costa Coun…    1049025           116054.      590.  133140. 
- 8 Del Norte County        28610            51540.     1061.    4565. 
- 9 El Dorado County       181058            97864.      590.   17453. 
-10 Fresno County          930450            61192.     1137.  262376. 
-# ℹ 48 more rows
-# ℹ 2 more variables: med_poverty_rate &lt;dbl&gt;, urbanization &lt;chr&gt;</code></pre>
 <pre><code># A tibble: 58 × 7
    County county_pop county_avg_income hisp_pop med_poverty_rate Urban
    &lt;chr&gt;       &lt;dbl&gt;             &lt;dbl&gt;    &lt;dbl&gt;            &lt;dbl&gt; &lt;dbl&gt;
@@ -1601,15 +1556,6 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 <h2 id="food-deserts-in-urban-vs.-rural-counties">Food Deserts in Urban vs. Rural Counties</h2>
 <div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>counties_urbanization</span>,</span>
-<span>       mapping <span class='op'>=</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span>x <span class='op'>=</span> <span class='va'>avg_pop_fd</span>, fill <span class='op'>=</span> <span class='va'>urbanization</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span> <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_histogram.html'>geom_histogram</a></span><span class='op'>(</span>position <span class='op'>=</span> <span class='st'>"identity"</span>, alpha <span class='op'>=</span> <span class='fl'>0.6</span>, bins <span class='op'>=</span> <span class='fl'>10</span><span class='op'>)</span> <span class='op'>+</span> </span>
-<span>  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/labs.html'>labs</a></span><span class='op'>(</span></span>
-<span>    title <span class='op'>=</span> <span class='st'>"Food Deserts in Urban vs. Rural Counties"</span>,</span>
-<span>    x <span class='op'>=</span> <span class='st'>"Average Population of People Living in Food Deserts"</span>,</span>
-<span>    y <span class='op'>=</span> <span class='st'>"County Count"</span></span>
-<span>  <span class='op'>)</span></span></code></pre>
-</div>
 <p><img src="index_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
 </div>
 <h2 id="linear-regression">Linear Regression</h2>
@@ -1643,7 +1589,7 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 <p>The regression analysis suggests that there is a relationship between Median Poverty Rate across California counties and the average number of people living in food deserts. For each unit increase in the median poverty rate, the average population living in food deserts, in this case presented as the variable “intercept”, increases by 40 people, assuming all other factors remain constant. The Median Poverty Rate per County is significant as it has a P-Value of 0, so the null hypothesis is rejected, meaning that living in poverty does have an impact on whether or not you are more or less likely to live in food deserts.</p>
 <p>Answer to Hypothesis:</p>
 <p>The linear regression I ran in this milestone allows me to keep exploring the relationship between income and food deserts across counties in California. As expected, both my graph and the linear regression shows poverty rates to be a factor indicating whether or not a population is more susceptible to experiencing food deserts. The data I have so far is interesting as it strengthens my hypothesis, that low income people have less access to supermarkets and fresh foods. However, I am still in the process of finding out how urbanization and ethnicity further impacts the population of people experiencing food deserts.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>

@@ -12,7 +12,7 @@ output:
 
 I am interested in exploring data related to food deserts in urban areas and with a predominantly low-income population. I think that the data I find will most likely reflect that low-income communities have more fast food places compared to fresh food markets.
 
-```{r, include= FALSE}
+```{r echo= FALSE}
 library(tidyverse)
 library(readxl)
 library(dplyr)
@@ -20,7 +20,6 @@ food_access <- read_excel("~/GOV 50/PSETS/gov50-final-project/FoodAccessResearch
                           sheet = 3, 
                           na = c("", "NA", "NULL")) |> 
 mutate(urban = if_else(Urban == 1, "Urban", "Rural"))
-food_access
 
 ```
 
@@ -31,7 +30,7 @@ Are low-income communities in California more susceptible to food deserts? In th
 
 ## Milestone 3
 
-```{r, echo = FALSE}
+```{r echo = FALSE}
 califonia_counties <- food_access |>  
   filter(State == "California") |>
     select(- c(lakidshalf:laomultirhalfshare,
@@ -43,12 +42,11 @@ califonia_counties <- food_access |>
   
 food_access$lahisphalf <- as.numeric(as.character(food_access$lahisphalf))
 
-califonia_counties
 
 ```
 
 
-```{r, echo = FALSE}
+```{r echo = FALSE}
 california_counties <- food_access|>
   filter(State == "California")
 
@@ -65,13 +63,12 @@ california_counties <- california_counties |>
             urban = sum(Urban, na.rm = TRUE),
             med_poverty_rate = median(PovertyRate, na.rm = TRUE)) 
 
-california_counties
 
 ```
 Out of 1,499,556 people living in Alameda county, the average income is 112,924, a particularly middle class county. However on average, only 429 low income people with low access in the country live within 1/2 a mile in urban spaces and 10 miles in rural areas away from a market.  
 
 
-```{r, echo = FALSE}
+```{r echo = FALSE}
 library(ggplot2)
 ggplot(data = california_counties,
        mapping = aes(x = county_avg_income,
@@ -89,11 +86,11 @@ The graph shows the relationship between income and food deserts. The Y variable
 
 ## Milestone 4
 
-```{r, echo = FALSE}
+```{r echo = FALSE}
 counties_urbanization<- california_counties|>
   mutate(urbanization = if_else(urban > 25, "Urban", "Rural" )) |>
   select(-c(urban))
-counties_urbanization
+
 
 try_1<- counties_urbanization |>
   group_by(urbanization) |>
@@ -109,7 +106,7 @@ try_1
 
 
 
-```{r}
+```{r echo = FALSE}
 ggplot(data = counties_urbanization,
        mapping = aes(x = avg_pop_fd, fill = urbanization)) + geom_histogram(position = "identity", alpha = 0.6, bins = 10) + 
   labs(
@@ -124,7 +121,7 @@ ggplot(data = counties_urbanization,
 
 ## Linear Regression
 
-```{r, echo = FALSE}
+```{r echo = FALSE}
 library(broom)
 library(tidyverse)
 
