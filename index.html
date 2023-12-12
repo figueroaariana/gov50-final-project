@@ -1517,47 +1517,33 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </div>
 
 <div class="d-article">
-<h2 id="project-thoughts-and-ideas">Project thoughts and Ideas</h2>
-<p>I am interested in exploring data related to food deserts in urban areas and with a predominantly low-income population. I think that the data I find will most likely reflect that low-income communities have more fast food places compared to fresh food markets.</p>
+<h2 id="introduction">Introduction</h2>
+<p>I am interested in exploring data related to food deserts in urban areas and with a predominantly low-income population. I think that the data I find will most likely reflect that low-income communities in urban spaces have a harder time finding fresh foods, meaning that they live in food deserts. Throughout this project, I will try to address the question; does urbanization and low-income rates among counties in California make certain communities more susceptible to food deserts? I believe that wealthier communities will have lower food desert rates in comparison to low-income communities, and that those living in urban spaces have less access to fresh foods due to the density of cities and convenience of fast food chains.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<h2 id="milestone-2">Milestone 2</h2>
-<p>Are low-income communities in California more susceptible to food deserts? In this study, I plan to examine and compare how low-income communities are affected by food deserts and their proximity to food markets and ability to access fresh food. I plan to do a comparative analysis between middle class and lower-income communities to assess the differences in proximity to supermarkets. I hypothesize that communities that are wealthier likely have higher access to fresh foods, therefore less susceptible to food deserts. I base this hypothesis on the fact that inner city/urban communities lack the spaces for supermarkets and there has been data exploring the reason why supermarkets are so hard to access in urban areas where there are more people of color and low-income people living in these spaces. My unit of analysis interest will be income (in California Counties), race, and proximity to supermarkets. The explanatory variable of interest is whether there are disparities in proximity to supermarkets between races and income. For example, if the variable income were to be coded, high income would be coded with == 1 and low income would be == 0. I would do this using the “if_else” function in the data set. This variable is measured from the Gov Data website data set of Food Access in counties across the US. The outcome variable of interest (dependent variable) is the amount of supermarkets in the area which in theory depend on the location/income demographic of the place where they are built and how likely people are able to access fresh food.If I observe that those counties that are considered to be more high-income have more supermarkets with closer proximity than low-income communities, my hypothesis will be supported. If the data happens to show no disparities between both incomes and the proximity and amount of supermarkets by mile, then my hypothesis will disproved.</p>
-<h2 id="milestone-3">Milestone 3</h2>
+<h2 id="data-source">Data Source</h2>
+<p>The data set I used in this research study is pulled from the Data.gov Data sets released by the government titled, “Food Access Research,” a survey index collected through the Census.The data set collected information from households across the nation, and I decided to focus my study on counties in California. The key dependent factor is the population of People Living in Food Deserts. The independent factors of this comparative analysis are the Median Poverty Rates per county and Urbanization (whether someone lives in a rural town, suburbs, or city). I plan to identify and analyze whether or not these independent factors impact peoples’ susceptibility of experiencing food deserts, which I hypothesize does have an impact.</p>
+<p>I base this hypothesis on the fact that inner city/urban communities lack the spaces for supermarkets and there is prior data exploring the reason why supermarkets are so hard to access in urban areas where there are usually more low-income, people of color inhabiting the area. The unit of analysis I will be basing my observation on is population (“x” amount of people living in food deserts).The unit of analysis for my independent variables will be average income per county in dollars (per California Counties), and urbanization. The explanatory variables of interest are urbanization and income. My outcome variable of interest will be whether or not income and/or urbanization have an impact on the probability of communities living in food deserts. If I observe that those counties that are considered to be more high-income have more supermarkets with closer proximity than low-income communities, my hypothesis will be supported. If the data happens to show no correlation between incomes and Urbanization, then my hypothesis will disproved.</p>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
 <div class="layout-chunk" data-layout="l-body">
 
 </div>
-<p>Out of 1,499,556 people living in Alameda county, the average income is 112,924, a particularly middle class county. However on average, only 429 low income people with low access in the country live within 1/2 a mile in urban spaces and 10 miles in rural areas away from a market.</p>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="index_files/figure-html5/unnamed-chunk-4-1.png" width="624" /></p>
 </div>
-<p>The graph shows the relationship between income and food deserts. The Y variable is the low income population count beyond 1/2 mile for urban areas or 10 miles for rural areas from supermarket. This means that approximately an average 1500 people who make about $50,000 a year, are not of close proximity to supermarkets. Of those who are in the higher income bracket, a smaller amount of individuals are far from supermarkets. The line of best fit shows a slightly negative relationship concerning exposure to food deserts and higher income. As people are wealthier, they are less likely to experience living in food deserts.</p>
-<h2 id="milestone-4">Milestone 4</h2>
+<p>The graph shows the relationship between income and food deserts. The Y variable is the low income population count beyond 1/2 mile for urban areas or 10 miles for rural areas from supermarket. This means that approximately an average 1500 people who make about $50,000 a year, are not of close proximity to supermarkets. Of those who are in the higher income bracket,there is a smaller number of individuals are far from supermarkets. The line of best fit shows a slightly negative relationship concerning exposure to food deserts and higher income. As people are wealthier, they are less likely to experience living in food deserts.</p>
+<p>This plot focuses on one of my independent variables, which is income and it highlights the disparities between people across counties, not only by income, but by exposure to food deserts as well. This correlation is interesting as it helps prove my hypothesis that wealthier counties have a smaller population experiencing food deserts. Low-income communities are at a disadvantage as the highest report lands above the federal poverty line.</p>
 <div class="layout-chunk" data-layout="l-body">
-<pre><code># A tibble: 58 × 7
-   County county_pop county_avg_income hisp_pop med_poverty_rate Urban
-   &lt;chr&gt;       &lt;dbl&gt;             &lt;dbl&gt;    &lt;dbl&gt;            &lt;dbl&gt; &lt;dbl&gt;
- 1 Alame…    1510271           112924. 124872.              7.62  434.
- 2 Alpin…       1175            82813      84.0            19.8    NA 
- 3 Amado…      38091            74668.   4083.              8.46   NA 
- 4 Butte…     220000            65078.  21547.             17.5   962.
- 5 Calav…      45578            74943.   3905.              8.74   NA 
- 6 Colus…      21419            63739.   7676.             13.0    NA 
- 7 Contr…    1049025           116054. 133140.              6.77  590.
- 8 Del N…      28610            51540.   4565.             29.8    NA 
- 9 El Do…     181058            97864.  17453.              8.33   NA 
-10 Fresn…     930450            61192. 262376.             23.0  1137.
-# ℹ 48 more rows
-# ℹ 1 more variable: Rural &lt;dbl&gt;</code></pre>
+
 </div>
 <h2 id="food-deserts-in-urban-vs.-rural-counties">Food Deserts in Urban vs. Rural Counties</h2>
 <div class="layout-chunk" data-layout="l-body">
 <p><img src="index_files/figure-html5/unnamed-chunk-6-1.png" width="624" /></p>
 </div>
+<p>This plot highlights the fact that most people living in Food Deserts come from Urban spaces. However, it is interesting that the county with the highest reported population of people comes from a rural county. This can be explained by the fact that rural communities often have lower density rates, meaning that many families have long drives to get to supermarkets or other spaces where they can access fresh foods. Another possibility could be the fact that these are agriculture communities, dismissing the need for supermarkets, yet still being far from them. Despite this outlier in the data, it is safe to say that most people living in food deserts consistently come from urban spaces. As mentioned prior, many studies have shown that the lack of space diminishes the opportunity to establish a farmers market or develop a permanent food market for families.</p>
 <h2 id="linear-regression">Linear Regression</h2>
 <div class="layout-chunk" data-layout="l-body">
 <table>
@@ -1571,25 +1557,30 @@ code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">(Intercept)</td>
-<td style="text-align: right;">166.359</td>
-<td style="text-align: right;">102.298</td>
-<td style="text-align: right;">0.11</td>
+<td style="text-align: left;">Constant</td>
+<td style="text-align: right;">33.416</td>
+<td style="text-align: right;">118.976</td>
+<td style="text-align: right;">0.780</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">med_poverty_rate</td>
-<td style="text-align: right;">40.336</td>
-<td style="text-align: right;">6.892</td>
-<td style="text-align: right;">0.00</td>
+<td style="text-align: left;">Median Poverty Rate</td>
+<td style="text-align: right;">44.093</td>
+<td style="text-align: right;">6.954</td>
+<td style="text-align: right;">0.000</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Urbanization</td>
+<td style="text-align: right;">156.974</td>
+<td style="text-align: right;">76.970</td>
+<td style="text-align: right;">0.046</td>
 </tr>
 </tbody>
 </table>
-<pre><code>NULL</code></pre>
 </div>
-<p>The regression analysis suggests that there is a relationship between Median Poverty Rate across California counties and the average number of people living in food deserts. For each unit increase in the median poverty rate, the average population living in food deserts, in this case presented as the variable “intercept”, increases by 40 people, assuming all other factors remain constant. The Median Poverty Rate per County is significant as it has a P-Value of 0, so the null hypothesis is rejected, meaning that living in poverty does have an impact on whether or not you are more or less likely to live in food deserts.</p>
-<p>Answer to Hypothesis:</p>
-<p>The linear regression I ran in this milestone allows me to keep exploring the relationship between income and food deserts across counties in California. As expected, both my graph and the linear regression shows poverty rates to be a factor indicating whether or not a population is more susceptible to experiencing food deserts. The data I have so far is interesting as it strengthens my hypothesis, that low income people have less access to supermarkets and fresh foods. However, I am still in the process of finding out how urbanization and ethnicity further impacts the population of people experiencing food deserts.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<p>The regression analysis suggests that there is a relationship between Median Poverty Rate across California counties and the average number of people living in food deserts. For each unit increase in the median poverty rate, the average population living in food deserts, in this case presented as the variable “intercept”, increases by 40 people, assuming all other factors remain constant. The Median Poverty Rate per County is significant as it has a P-Value of 0, so the null hypothesis is rejected, meaning that living in poverty does have an impact on whether or not you are more or less likely to live in food deserts. The Urbanization variable is also statistically significant with a P-Value of 0.046, meaning that we can reject the null hypothesis for this variable as well. Considering the result of the regression, it is valid to say that there is a correlation between food deserts and whether or not people are living in urban or rural spaces.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The results and assessments of poverty and urbanization’s impact on food access proves to be significant. Both graphs and the linear regression show poverty rates and urbanization to be a factor indicating whether or not a population is more susceptible to experiencing food deserts, thus supporting my hypothesis. Some possible limitations of my analysis is the possibility for lack of information, since this is a survey I run into the risk of excluding the experiences of some people. A possible confounder can be the communities in which people live in and how some rural communities in California are technically far from supermarkets but have access to fresh foods through neighboring farms. Although the latter is less of a strong confounder; the possible exclusion of people in counties is what leaves me dissatisfied. In order to fix this, I would extend the study and implement canvassers and strive for a response per household. In order to have a more representative analysis, I would also research how food access varies by ehtnicity and education across California counties.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
